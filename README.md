@@ -1,6 +1,6 @@
 # Indirect prompt injection vs. a document-reading agent — with a held-out defense
 
-[![verify](https://github.com/HemantBK/ipi-study/actions/workflows/verify.yml/badge.svg)](https://github.com/HemantBK/ipi-study/actions/workflows/verify.yml)
+[![verify](https://github.com/HemantBK/prompt-injection-agent-study/actions/workflows/verify.yml/badge.svg)](https://github.com/HemantBK/prompt-injection-agent-study/actions/workflows/verify.yml)
 Python 3.11+ · MIT · zero dependencies beyond the two vendor SDKs · `make verify` needs no API keys
 
 A small, rigorous adversarial-robustness study. A minimal ReAct agent (two model families
