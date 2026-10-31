@@ -1,0 +1,42 @@
+{
+ "mode": "regex",
+ "seeds": [
+  100,
+  101,
+  102,
+  103,
+  104,
+  105,
+  106,
+  107,
+  108,
+  109
+ ],
+ "clean": {
+  "claude": {
+   "fp": 0,
+   "n": 320,
+   "cost": 0.0
+  }
+ },
+ "families": {
+  "override": {
+   "claude": {
+    "tp": 10,
+    "n": 10
+   }
+  },
+  "delimiter_escape": {
+   "claude": {
+    "tp": 10,
+    "n": 10
+   }
+  },
+  "refusal": {
+   "claude": {
+    "tp": 10,
+    "n": 10
+   }
+  }
+ }
+}

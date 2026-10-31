@@ -1,0 +1,25 @@
+name: verify
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install -r requirements.txt
+      - name: Fixture tests, PASS/FAIL per trust layer (no API keys, no network)
+        run: make verify
+      - name: Tables rebuild from committed raw logs must be byte-identical
+        run: |
+          cp results/tables/RESULTS.md /tmp/RESULTS.before.md
+          make tables > /dev/null
+          diff /tmp/RESULTS.before.md results/tables/RESULTS.md
